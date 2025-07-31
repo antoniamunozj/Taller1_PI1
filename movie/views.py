@@ -8,8 +8,8 @@ from .models import Movie
     #return HttpResponse('<h1>Welcome to Home Page</h1>')
 
 def about(request):
-   return HttpResponse('<h1>Welcome to Home Page</h1>')
-   #return render(request, 'about.html')
+   #return HttpResponse('<h1>Welcome to Home Page</h1>')
+   return render(request, 'about.html')
 
 def home(request):
    searchTerm = request.GET.get('searchMovie')
@@ -18,4 +18,4 @@ def home(request):
    else:
       movies = Movie.objects.all() 
    return render (request, 'home.html', {'SearchTerm':searchTerm, 'movies': movies})
-   #return render(request, 'home.html',{'name':'Antonia Muñoz'})
+   return render(request, 'home.html',{'name':'Antonia Muñoz'})
